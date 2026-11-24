@@ -21,6 +21,17 @@ try:
         print(pessoa["name"], "-", pessoa["email"])
         pessoa_dic[pessoa["name"]]= pessoa["email"]
          
+        while True:
+            nome= input("Procurar nome(ou Enter para sair): ").strip()
+            if not nome:
+                break
+            
+            for nome_c , mail in pessoa_dic.items():
+                if nome in nome_c:
+                    print(f"{nome_c} : {mail}")
+                
+                else:
+                    pass
                 
     print("Registo não encontrado")
         
