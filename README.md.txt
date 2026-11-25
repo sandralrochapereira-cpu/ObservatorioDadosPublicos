@@ -29,7 +29,7 @@ Respostas de desenvolvimento do .5:
 5.5
 Significado de requests.get(): Significa que está a fazer um pedido à fonte da variável)
  
-	       timeout=10: Significa que o programa deve tentar executar o pedido no tempo máximo de 10 segundos antes de dedisdtir e imprimir uma mensagem de erro.
+	       timeout=10: Significa que o programa deve tentar executar o pedido no tempo máximo de 10 segundos antes de desistir e imprimir uma mensagem de erro.
 
 	       raise_for_status(): Faz o código parar e responder ao erro em vez de tentar ler os dados corrompidos.
 	       
@@ -59,12 +59,44 @@ A estrutura HTML da página pode influenciar o funcionamento do script na medida
 
 Respostas de desenvolvimento do .7:
 
+7.13
 O encoding=utf-8-sig serve para denominar a linguagem do encoding,
 O delimiter=";" Serve para separar as colunas por ";"
 O writeheader() serve para escrever o cabeçalho
 O writerows() serve para escrever as linhas.
 
+8.
 Para a parte B da atividade decidi implementar a melhoria "A", que consiste em filtrar os resultados de uma pesquisa onde se pode procurara apenas por parte do nome para obter os possíveis resultados.
 
+Para isso introduzi dentro do ciclo for um ciclo while:
 
+ while True:
+            nome= input("Procurar nome(ou Enter para sair): ").strip()
+            if not nome:
+                break
+            
+            for nome_c , mail in pessoa_dic.items():
+                if nome in nome_c:
+                    print(f"{nome_c} : {mail}")
+                
+                else:
+                    pass
+
+Este ciclo pede nomes ao utilizador e mostra quais resultados que contem essa parte do texto é que estão na lista até que este prima Enter. Corri o código e aparenta funcionar de acordo com o esperado.
+
+11.14
+Recolher dados através de uma API significa que a página fonte já nos disponibiliza esse serviço para que possamos aceder de forma direta e estruturada os dados do site. No casos do Web Scraping, fazemo-lo porque não temos API disponível, tendo que "raspar" o código fonte HTML, utilizando bibliotecas como o Beautiful Soup para nos ajudar a estruturar as informações recolhidas.
+
+11.15
+O formato CSV apresenta uma grande vantagem em Análise de dados, que é transformar ficheiros de dados brutos em tabelas de Excel.
+
+11.16
+A melhoria autónoma que escolhi foi a de filtrar os resultados da pesquisa necessitando apenas de uma parte do nome para encontrar o livro, pois achei uma função bastante útil e porque a melhoria da exportação de csv acabava por ser um pouco redundante.
+
+11.17
+Conforme o decorrer do processo, fui confirmando que as pastas, ficheiros e as publicações push estavam a ser criadas corretamente, bem como o script de python que foi  submetido a vários testes de operabilidade.
+
+11.18
+O git commit guarda localmente na "porta de saída" do repositório local os ficheiros/instruções. O git push envia-as/publica-as no repositório público(online).
+              
 
